@@ -1,0 +1,51 @@
+{
+    "id": "com.github.kaakaa.mattermost-slack-subscriber",
+    "name": "Slack Subscriber",
+    "description": "Subscribe slack and post message to mattermost",
+    "version": "0.0.1",
+    "server": {
+        "executables": {
+            "linux-amd64": "server/dist/plugin-linux-amd64",
+            "darwin-amd64": "server/dist/plugin-darwin-amd64",
+            "windows-amd64": "server/dist/plugin-windows-amd64.exe"
+        },
+        "executable": ""
+    },
+    "settings_schema": {
+        "header": "",
+        "footer": "",
+        "settings": [{
+            "key": "SlackOAuthAccessToken",
+            "display_name": "Slack OAuth Access Token",
+            "type": "text",
+            "help_text": "The slack oauth access token with `channel:read` permission.",
+            "placeholder": "xoxp-12345678901-12345678901-123456789012-abcdefghijklmnopqrstuv1234567890"
+        }, {
+            "key": "SlackBotUserToken",
+            "display_name": "Slack Bot User OAuth Access Token",
+            "type": "text",
+            "help_text": "The slack bot user oauth access token.",
+            "placeholder": "xoxb-12345678901-123456789012-abcdefghijklmn1234567890"
+        }, {
+            "key": "SlackChannels",
+            "display_name": "Slack Channels",
+            "type": "text",
+            "help_text": "Comma separated Slack channel ids for subscribing.",
+            "placeholder": "ABCD12345,EFGH67890"
+        },
+        {
+            "key": "MattermostChannelID",
+            "display_name": "Mattermost Channel ID",
+            "type": "text",
+            "help_text": "Mattermost channel ID where this plugin post message",
+            "placeholder": "abcdefghijklmnop1234567890"
+        },
+        {
+            "key": "MattermostUserID",
+            "display_name": "Mattermost User ID",
+            "type": "text",
+            "help_text": "This plugin post messages by user with this user id",
+            "placeholder": "abcdefghijklmnop1234567890"
+        }]
+    }
+}
